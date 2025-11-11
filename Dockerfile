@@ -1,4 +1,3 @@
-# ===== Stage 1: Build the app =====
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
 
@@ -19,6 +18,10 @@ RUN mkdir -p /app/uploads/vehicles && \
     adduser -D appuser && \
     chown -R appuser:appuser /app
 
+# Copy demo data into the image
+COPY --chown=appuser:appuser database /app/database
+COPY --chown=appuser:appuser uploads /app/uploads
+
 EXPOSE 8080
 
 # Switch to non-root user
@@ -32,4 +35,4 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 # docker build -t demo-image --build-arg MAVEN_OPTS="-Dmaven.repo.local=/root/.m2" .
 
 # Run the image, mounts demo-data and uses env.list
-# docker run -d -p 8080:8080 --env-file env.list -v ${PWD}/demo-data/database:/app/database -v ${PWD}/demo-data/uploads:/app/uploads --name demo-container demo-image
+# docker run -d -p 8080:8080 --env-file env.list -v ${PWD}/database:/app/database -v ${PWD}/uploads:/app/uploads --name demo-container demo-image
