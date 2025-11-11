@@ -170,9 +170,9 @@ public class AdminController {
                 // Resize image before saving
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 Thumbnails.of(file.getInputStream())
-                        .size(1200, 1200) // Max 1200px on longest side
+                        .size(600, 600) // Max 1200px on longest side
                         .keepAspectRatio(true) // Explicitly maintain ratio
-                        .outputQuality(0.70) // Drop the quality by 70%
+                        .outputQuality(0.60) // Drop the quality by 70%
                         .toOutputStream(outputStream);
 
                 // Save resized image
