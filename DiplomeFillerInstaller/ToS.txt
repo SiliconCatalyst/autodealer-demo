@@ -1,0 +1,13 @@
+Diplome Filler - Terms of Service
+
+By installing this software, you agree to the following terms:
+
+1. This software is provided "as is" without warranty of any kind.
+2. You may use this application for personal or institutional use only.
+3. Redistribution, modification, or resale of this application is strictly prohibited without prior written permission from the author.
+4. The developer is not liable for any damages arising from the use or misuse of this software.
+5. This installer includes third-party dependencies under their respective licenses.
+
+If you do not agree to these terms, please cancel the installation.
+
+(c) 2025 Diplome Filler
